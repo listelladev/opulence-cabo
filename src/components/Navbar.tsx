@@ -9,11 +9,9 @@ export default function Navbar() {
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
   const hiddenRef = useRef(false);
-  const scrolledRef = useRef(false);
 
   useEffect(() => {
     const nav = document.getElementById("main-nav");
-    const line = document.getElementById("nav-line");
     if (!nav) return;
 
     const handleScroll = () => {
@@ -22,22 +20,11 @@ export default function Navbar() {
 
       requestAnimationFrame(() => {
         const currentY = window.scrollY;
-        const isScrolled = currentY > 80;
         const isHidden = currentY > lastScrollY.current && currentY > 200;
 
-        if (isScrolled !== scrolledRef.current) {
-          scrolledRef.current = isScrolled;
-          nav.style.backgroundColor = isScrolled ? "rgba(51,51,51,0.95)" : "transparent";
-          nav.style.backdropFilter = isScrolled ? "blur(12px)" : "none";
-          if (line) line.style.opacity = isScrolled ? "0.15" : "0";
-        }
-
-        if (isScrolled && isHidden !== hiddenRef.current) {
+        if (isHidden !== hiddenRef.current) {
           hiddenRef.current = isHidden;
           nav.style.transform = isHidden ? "translateY(-100%)" : "translateY(0)";
-        } else if (!isScrolled) {
-          hiddenRef.current = false;
-          nav.style.transform = "translateY(0)";
         }
 
         lastScrollY.current = currentY;
@@ -80,8 +67,8 @@ export default function Navbar() {
           backgroundColor: "transparent",
           backdropFilter: "none",
           transform: "translateY(0)",
-          transition: "background-color 0.5s ease, backdrop-filter 0.5s ease, transform 0.3s ease",
-          willChange: "transform, background-color",
+          transition: "transform 0.3s ease",
+          willChange: "transform",
         }}
       >
         <div className="mx-auto px-6 md:px-10">
@@ -162,9 +149,8 @@ export default function Navbar() {
           id="nav-line"
           style={{
             height: "1px",
-            backgroundColor: "rgba(255,255,255,0.15)",
-            opacity: 0,
-            transition: "opacity 0.5s ease",
+            backgroundColor: "rgba(255,255,255,1)",
+            opacity: 1,
           }}
         />
       </nav>
