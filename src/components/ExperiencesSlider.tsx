@@ -113,7 +113,7 @@ export default function ExperiencesSlider() {
                         className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                         loading="eager"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
                       <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                         <h4 className="text-lg md:text-xl tracking-[0.1em] uppercase text-white font-light mb-0 group-hover:mb-3 transition-all duration-500">

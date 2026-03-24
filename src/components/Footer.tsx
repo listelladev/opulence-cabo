@@ -4,14 +4,13 @@ import Image from "next/image";
 import { useLang } from "@/components/LangContext";
 
 const footerExperiences = [
-  "Yachting",
-  "Private Villas",
-  "Private Jet",
-  "Fine Dining",
-  "Entertainment",
-  "Golf",
-  "Fishing",
-  "Helicopter Ride",
+  { label: "Yachting", href: "/experiences" },
+  { label: "Private Villas", href: "/villas" },
+  { label: "Private Aviation", href: "/experiences" },
+  { label: "Fine Dining", href: "/experiences" },
+  { label: "Entertainment", href: "/experiences" },
+  { label: "Golf", href: "/experiences" },
+  { label: "Helicopter Tours", href: "/experiences" },
 ];
 
 export default function Footer() {
@@ -24,7 +23,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer id="contact" className="relative z-[100] bg-[#262626] border-t border-white/5">
+    <footer id="contact" className="relative z-[100] bg-dark border-t border-white/5">
       <div className="mx-auto px-6 md:px-10 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-1">
@@ -45,8 +44,8 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {footerExperiences.map((exp) => (
-                <li key={exp}>
-                  <a href="#" className="text-sm text-white/50 hover:text-white transition-colors duration-300">{exp}</a>
+                <li key={exp.label}>
+                  <a href={exp.href} className="text-sm text-white/50 hover:text-white transition-colors duration-300">{exp.label}</a>
                 </li>
               ))}
             </ul>

@@ -48,10 +48,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: t("nav.villas"), href: "#villas" },
-    { label: t("nav.experiences"), href: "#experiences" },
+    { label: t("nav.villas"), href: "/villas" },
+    { label: t("nav.experiences"), href: "/experiences" },
     { label: t("nav.contact"), href: "#contact" },
-    { label: t("nav.about"), href: "#about" },
+    { label: t("nav.about"), href: "/about" },
   ];
 
   return (

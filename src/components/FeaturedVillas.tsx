@@ -2,51 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useLang } from "@/components/LangContext";
-
-const villas = [
-  {
-    name: "Villa Lands End",
-    location: "Pedregal",
-    beds: 7,
-    guests: 16,
-    image: "/images/villas/Villa-Lands-end-25.jpg",
-  },
-  {
-    name: "Casa Texas",
-    location: "Pedregal",
-    beds: 5,
-    guests: 14,
-    image: "/images/villas/IMG_2195.webp",
-  },
-  {
-    name: "Villa Fuego",
-    location: "Pedregal",
-    beds: 7,
-    guests: 14,
-    image: "/images/villas/IMG_3499.jpeg",
-  },
-  {
-    name: "Villa #7",
-    location: "Pedregal",
-    beds: 7,
-    guests: 16,
-    image: "/images/villas/IMG_6604.webp",
-  },
-  {
-    name: "Villa Vegas Dave 2",
-    location: "Pedregal",
-    beds: 11,
-    guests: 30,
-    image: "/images/villas/IMG_5305.webp",
-  },
-  {
-    name: "Villa Vegas Dave 3",
-    location: "Punta Bella Palmilla",
-    beds: 13,
-    guests: 50,
-    image: "/images/villas/Vegas-Dave-3-DJI_0334-2-scaled.jpg",
-  },
-];
+import { villas as allVillas } from "@/data/villas";
 
 export default function FeaturedVillas() {
   const swiperRef = useRef<HTMLDivElement>(null);
@@ -114,9 +70,9 @@ export default function FeaturedVillas() {
       <div className="pl-6 md:pl-10 pr-0 overflow-hidden">
         <div ref={swiperRef} className="swiper">
           <div className="swiper-wrapper">
-            {villas.map((villa) => (
-              <div key={villa.name} className="swiper-slide">
-                <a href="#" className="group block">
+            {allVillas.map((villa) => (
+              <div key={villa.slug} className="swiper-slide">
+                <a href={`/properties/${villa.slug}`} className="group block">
                   <div className="relative overflow-hidden mb-4 aspect-[4/5]">
                     <img
                       src={villa.image}
@@ -134,7 +90,7 @@ export default function FeaturedVillas() {
                       <p className="text-sm text-white/50">{villa.location}</p>
                     </div>
                     <div className="flex gap-4 text-xs text-white/40 mt-1">
-                      <span>{villa.beds} {t("villas.beds")}</span>
+                      <span>{villa.bedrooms} {t("villas.beds")}</span>
                       <span>{villa.guests} {t("villas.guests")}</span>
                     </div>
                   </div>

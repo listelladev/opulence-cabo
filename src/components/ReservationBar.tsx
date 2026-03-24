@@ -17,7 +17,7 @@ export default function ReservationBar() {
 
   return (
     <aside
-      className={`fixed bottom-0 left-0 right-0 z-[1000000] bg-dark-deep/95 backdrop-blur-md border-t border-white/5 transition-all duration-500 ${
+      className={`fixed bottom-0 left-0 right-0 z-[1000000] bg-dark/95 backdrop-blur-md border-t border-white/5 transition-all duration-500 ${
         visible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
       }`}
     >
