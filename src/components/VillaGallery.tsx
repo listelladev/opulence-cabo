@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
+import { createPortal } from "react-dom";
 
 /* ── Lightbox (pure CSS transitions, no GSAP needed) ── */
 function Lightbox({
@@ -62,7 +63,7 @@ function Lightbox({
     };
   }, []);
 
-  return (
+  const content = (
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center transition-opacity duration-[350ms] ease-out"
       style={{ opacity: visible ? 1 : 0 }}
@@ -159,6 +160,8 @@ function Lightbox({
       </div>
     </div>
   );
+
+  return createPortal(content, document.body);
 }
 
 /* ── Gallery Grid ── */

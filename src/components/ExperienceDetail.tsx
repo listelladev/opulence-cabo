@@ -12,7 +12,7 @@ import { useLang } from "@/components/LangContext";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ExperienceDetail({ experience }: { experience: Experience }) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const otherExperiences = useMemo(
     () => getOtherExperiences(experience.slug, 3),
     [experience.slug]
@@ -81,7 +81,7 @@ export default function ExperienceDetail({ experience }: { experience: Experienc
                 {t("expDetail.expLabel")}
               </h2>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight mb-6">
-                {experience.title}
+                {lang === "ES" && experience.titleES ? experience.titleES : experience.title}
               </h1>
             </div>
           </div>
@@ -119,11 +119,11 @@ export default function ExperienceDetail({ experience }: { experience: Experienc
                     {/* Content */}
                     <div className={`w-full ${section.image ? "lg:w-1/2" : ""}`}>
                       <h2 className="text-2xl md:text-3xl font-extralight mb-6">
-                        {section.title}
+                        {lang === "ES" && section.titleES ? section.titleES : section.title}
                       </h2>
 
                       <p className="text-base text-white/60 font-light leading-relaxed mb-8">
-                        {section.description}
+                        {lang === "ES" && section.descriptionES ? section.descriptionES : section.description}
                       </p>
 
                       {/* Includes list */}
@@ -133,7 +133,7 @@ export default function ExperienceDetail({ experience }: { experience: Experienc
                             {t("expDetail.includes")}
                           </h3>
                           <ul className="space-y-3">
-                            {section.includes.map((item) => (
+                            {(lang === "ES" && section.includesES && section.includesES.length > 0 ? section.includesES : section.includes).map((item) => (
                               <li
                                 key={item}
                                 className="flex items-start gap-3"
@@ -172,7 +172,7 @@ export default function ExperienceDetail({ experience }: { experience: Experienc
           <div className="px-6 md:px-10 py-20 md:py-28">
             <div className="max-w-3xl mx-auto text-center">
               <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed">
-                {experience.description}
+                {lang === "ES" && experience.descriptionES ? experience.descriptionES : experience.description}
               </p>
             </div>
           </div>
@@ -243,10 +243,10 @@ export default function ExperienceDetail({ experience }: { experience: Experienc
                   <div className="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 <h4 className="text-lg font-normal mb-1 group-hover:text-gold transition-colors duration-300">
-                  {exp.title}
+                  {lang === "ES" && exp.titleES ? exp.titleES : exp.title}
                 </h4>
                 <p className="text-sm text-white/50 font-light line-clamp-2">
-                  {exp.description}
+                  {lang === "ES" && exp.descriptionES ? exp.descriptionES : exp.description}
                 </p>
               </a>
             ))}

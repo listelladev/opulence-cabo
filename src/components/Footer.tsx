@@ -3,17 +3,17 @@
 import Image from "next/image";
 import { useLang } from "@/components/LangContext";
 
-const footerExperiences = [
-  { label: "Private Villas", href: "/villas" },
-  { label: "Yachting", href: "/experiences/yachting" },
-  { label: "Fine Dining", href: "/experiences/fine-dining" },
-  { label: "Private Aviation", href: "/experiences/private-aviation" },
-  { label: "Entertainment", href: "/experiences/entertainment" },
-  { label: "Full-Service Groups", href: "/experiences/full-service-groups" },
-];
-
 export default function Footer() {
   const { t } = useLang();
+
+  const footerExperiences = [
+    { label: t("footer.exp.villas"), href: "/villas" },
+    { label: t("footer.exp.yachting"), href: "/experiences/yachting" },
+    { label: t("footer.exp.fineDining"), href: "/experiences/fine-dining" },
+    { label: t("footer.exp.aviation"), href: "/experiences/private-aviation" },
+    { label: t("footer.exp.entertainment"), href: "/experiences/entertainment" },
+    { label: t("footer.exp.groups"), href: "/experiences/full-service-groups" },
+  ];
 
   const footerLinks = [
     { label: t("footer.aboutUs"), href: "/about" },

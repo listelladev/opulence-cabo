@@ -158,6 +158,8 @@ const translations: Record<string, Record<Lang, string>> = {
   "about.contactUs": { EN: "Contact Us", ES: "Cont\u00e1ctanos" },
 
   // Villa Detail Page
+  "villa.suitesTitle": { EN: "Suites & Bedrooms", ES: "Suites y Habitaciones" },
+  "villa.policiesTitle": { EN: "House Policies", ES: "Pol\u00edticas de la Casa" },
   "villa.viewGallery": { EN: "View Gallery", ES: "Ver Galer\u00eda" },
   "villa.home": { EN: "Home", ES: "Inicio" },
   "villa.breadcrumbVillas": { EN: "Villas", ES: "Villas" },
@@ -173,6 +175,14 @@ const translations: Record<string, Record<Lang, string>> = {
   "villa.exploreOther": { EN: "Explore Other Villas", ES: "Explorar Otras Villas" },
   "villa.viewAll": { EN: "View All Villas", ES: "Ver Todas las Villas" },
   "villa.beds": { EN: "beds", ES: "camas" },
+
+  // Footer experience links
+  "footer.exp.villas": { EN: "Private Villas", ES: "Villas Privadas" },
+  "footer.exp.yachting": { EN: "Yachting", ES: "Yates" },
+  "footer.exp.fineDining": { EN: "Fine Dining", ES: "Alta Cocina" },
+  "footer.exp.aviation": { EN: "Private Aviation", ES: "Aviación Privada" },
+  "footer.exp.entertainment": { EN: "Entertainment", ES: "Entretenimiento" },
+  "footer.exp.groups": { EN: "Full-Service Groups", ES: "Grupos de Servicio Completo" },
 
   // Footer
   "footer.tagline": {

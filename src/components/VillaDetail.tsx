@@ -1,6 +1,6 @@
 "use client";
 
-import { Villa, getOtherVillas } from "@/data/villas";
+import { Villa, VillaSuite, getOtherVillas } from "@/data/villas";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -191,7 +191,7 @@ function AmenityIcon({ label }: { label: string }) {
 }
 
 export default function VillaDetail({ villa }: { villa: Villa }) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const otherVillas = useMemo(() => getOtherVillas(villa.slug, 3), [villa.slug]);
 
   return (
@@ -273,9 +273,37 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
               {/* Description */}
               <div className="mb-14 md:mb-20">
                 <p className="text-base md:text-lg text-white/70 leading-relaxed font-light">
-                  {villa.description}
+                  {lang === "ES" && villa.descriptionES ? villa.descriptionES : villa.description}
                 </p>
               </div>
+
+              {/* Suites & Bedrooms */}
+              {villa.suites && villa.suites.length > 0 && (
+                <div className="mb-14 md:mb-20">
+                  <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-8">
+                    {t("villa.suitesTitle")}
+                  </h2>
+                  <div>
+                    {villa.suites.map((suite, i) => (
+                      <div key={i} className="grid grid-cols-[1fr_auto] gap-x-8 py-4 border-b border-white/5">
+                        <div>
+                          <p className="text-sm text-white/80 font-light">
+                            {lang === "ES" && suite.nameES ? suite.nameES : suite.name}
+                          </p>
+                          {suite.note && (
+                            <p className="text-xs text-white/40 mt-1 font-light">
+                              {lang === "ES" && suite.noteES ? suite.noteES : suite.note}
+                            </p>
+                          )}
+                        </div>
+                        <p className="text-sm text-white/60 font-light text-right">
+                          {lang === "ES" && suite.bedsES ? suite.bedsES : suite.beds}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Property Info */}
               <div className="mb-14 md:mb-20">
@@ -283,7 +311,7 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
                   {t("villa.propertyInfo")}
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-6">
-                  {villa.propertyInfo.map((info) => (
+                  {(lang === "ES" && villa.propertyInfoES ? villa.propertyInfoES : villa.propertyInfo).map((info) => (
                     <div key={info.label}>
                       <p className="text-xs tracking-[0.15em] uppercase text-white/40 mb-1">
                         {info.label}
@@ -300,7 +328,7 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
                   {t("villa.amenities")}
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-                  {villa.amenities.map((amenity) => (
+                  {(lang === "ES" && villa.amenitiesES ? villa.amenitiesES : villa.amenities).map((amenity) => (
                     <div
                       key={amenity}
                       className="flex items-center gap-3 py-3 border-b border-white/5"
@@ -320,7 +348,7 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
                   {t("villa.features")}
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-                  {villa.features.map((feature) => (
+                  {(lang === "ES" && villa.featuresES ? villa.featuresES : villa.features).map((feature) => (
                     <div
                       key={feature}
                       className="flex items-start gap-3 py-3 border-b border-white/5"
@@ -339,6 +367,25 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
                   ))}
                 </div>
               </div>
+
+              {/* House Policies */}
+              {villa.policies && villa.policies.length > 0 && (
+                <div className="mb-14 md:mb-20">
+                  <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-8">
+                    {t("villa.policiesTitle")}
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
+                    {(lang === "ES" && villa.policiesES ? villa.policiesES : villa.policies).map((policy) => (
+                      <div key={policy} className="flex items-start gap-3 py-3 border-b border-white/5">
+                        <svg className="w-4 h-4 text-gold/50 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                        </svg>
+                        <span className="text-sm text-white/70 font-light">{policy}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Right Column — Sticky Book Now CTA */}
@@ -349,7 +396,7 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
                   <p className="text-sm text-white/50 mb-6">{villa.location}</p>
 
                   <div className="space-y-3 mb-8 border-t border-white/10 pt-6">
-                    {villa.highlights.map((h) => (
+                    {(lang === "ES" && villa.highlightsES ? villa.highlightsES : villa.highlights).map((h) => (
                       <div key={h} className="flex items-center gap-2">
                         <svg className="w-3.5 h-3.5 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />

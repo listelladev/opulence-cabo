@@ -7,7 +7,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import { useLang } from "@/components/LangContext";
 
 export default function ExperiencesCollection() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   return (
     <>
       <SmoothScroll />
@@ -53,10 +53,10 @@ export default function ExperiencesCollection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 <h3 className="text-xl md:text-2xl font-light mb-2 group-hover:text-gold transition-colors duration-300">
-                  {exp.title}
+                  {lang === "ES" && exp.titleES ? exp.titleES : exp.title}
                 </h3>
                 <p className="text-sm text-white/50 font-light leading-relaxed max-w-lg">
-                  {exp.description}
+                  {lang === "ES" && exp.descriptionES ? exp.descriptionES : exp.description}
                 </p>
               </a>
             ))}
