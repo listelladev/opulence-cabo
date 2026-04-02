@@ -138,7 +138,6 @@ const translations: Record<string, Record<Lang, string>> = {
   "expDetail.getInTouch": { EN: "Get in Touch", ES: "Cont\u00e1ctanos" },
   "expDetail.moreExp": { EN: "More Experiences", ES: "M\u00e1s Experiencias" },
   "expDetail.exploreOther": { EN: "Explore Other Offerings", ES: "Explorar Otras Ofertas" },
-  "expDetail.viewAll": { EN: "View All Experiences", ES: "Ver Todas las Experiencias" },
 
   // About Page
   "about.label": { EN: "About Us", ES: "Sobre Nosotros" },
