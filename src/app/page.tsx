@@ -15,7 +15,7 @@ export default function Home() {
       <SmoothScroll />
       <Navbar />
 
-      <main>
+      <main className="page-transition">
         {/* Hero - sticky, stays pinned while content scrolls over it */}
         <div className="relative h-[200vh]">
           <div className="sticky top-0 h-screen z-[1]">

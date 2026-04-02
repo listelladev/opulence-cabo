@@ -4,32 +4,32 @@ import { villas } from "@/data/villas";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import { useLang } from "@/components/LangContext";
 
 export default function VillasCollection() {
+  const { t } = useLang();
   return (
     <>
       <SmoothScroll />
       <Navbar />
 
-      <main className="bg-dark min-h-screen">
+      <main className="bg-dark min-h-screen page-transition">
         {/* Hero Section — full-bleed image with overlay text */}
         <div className="relative h-[70vh] md:h-[80vh] overflow-hidden">
           <div
             className="absolute inset-0 bg-fixed bg-cover bg-center"
-            style={{ backgroundImage: "url(/images/villas/villa-vegas-dave-2.webp)" }}
+            style={{ backgroundImage: "url(/images/villas/villa-vegas-dave-2/main-image.webp)" }}
           />
           <div className="absolute inset-0 bg-dark/60" />
           <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 md:px-10 text-center">
             <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-4">
-              Our Collection
+              {t("villasPage.label")}
             </h2>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight mb-4">
-              Luxury Private Villas
+              {t("villasPage.title")}
             </h1>
             <p className="text-base md:text-lg text-white/60 font-light max-w-2xl leading-relaxed">
-              From intimate beachfront retreats to expansive mountaintop estates,
-              each villa in our collection offers an unparalleled luxury experience
-              in Los Cabos.
+              {t("villasPage.subtitle")}
             </p>
           </div>
         </div>
@@ -65,25 +65,24 @@ export default function VillasCollection() {
         <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
           <div
             className="absolute inset-0 bg-fixed bg-cover bg-center"
-            style={{ backgroundImage: "url(/images/villas/villa-1.jpg)" }}
+            style={{ backgroundImage: "url(/images/villas/villa-1/main-image.jpg)" }}
           />
           <div className="absolute inset-0 bg-dark/70" />
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
             <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-4">
-              Your Dream Getaway Awaits
+              {t("villasPage.ctaLabel")}
             </h2>
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-extralight leading-tight mb-6 max-w-3xl">
-              Ready to Experience<br />Cabo in Style?
+              {t("villasPage.ctaHeading")}
             </h3>
             <p className="text-base text-white/50 font-light max-w-xl mb-10 leading-relaxed">
-              Let our concierge team curate the perfect villa and luxury
-              experience for your next escape to Los Cabos.
+              {t("villasPage.ctaDesc")}
             </p>
             <a
-              href="#contact"
+              href="/contact"
               className="inline-block px-10 py-4 bg-gold text-dark text-sm tracking-[0.15em] uppercase font-semibold hover:bg-gold-light transition-colors duration-300"
             >
-              Book Now
+              {t("villasPage.bookNow")}
             </a>
           </div>
         </section>

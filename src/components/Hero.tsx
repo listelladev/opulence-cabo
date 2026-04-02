@@ -28,7 +28,7 @@ export default function Hero() {
 
         {/* CTA Button */}
         <a
-          href="#villas"
+          href="/villas"
           className="inline-flex items-center gap-3 px-10 py-4 border border-gold/50 text-sm tracking-[0.15em] uppercase text-gold hover:bg-gold hover:text-dark transition-all duration-400"
         >
           {t("hero.cta")}

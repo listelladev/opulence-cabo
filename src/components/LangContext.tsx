@@ -98,6 +98,83 @@ const translations: Record<string, Record<Lang, string>> = {
   "reservation.label": { EN: "Make Your Reservation", ES: "Haz Tu Reservaci\u00f3n" },
   "reservation.book": { EN: "Book Now", ES: "Reservar Ahora" },
 
+  // Contact Page
+  "contact.getInTouch": { EN: "Get in Touch", ES: "Cont\u00e1ctenos" },
+  "contact.title": { EN: "Contact Us", ES: "Cont\u00e1ctanos" },
+  "contact.sendMessage": { EN: "Send Us a Message", ES: "Env\u00edanos un Mensaje" },
+  "contact.firstName": { EN: "First Name", ES: "Nombre" },
+  "contact.lastName": { EN: "Last Name", ES: "Apellido" },
+  "contact.email": { EN: "Email Address", ES: "Correo Electr\u00f3nico" },
+  "contact.phone": { EN: "Phone Number", ES: "N\u00famero de Tel\u00e9fono" },
+  "contact.inquiry": { EN: "Experience Inquiry (Optional)", ES: "Consulta de Experiencia (Opcional)" },
+  "contact.message": { EN: "Your Message", ES: "Tu Mensaje" },
+  "contact.send": { EN: "Send Message", ES: "Enviar Mensaje" },
+  "contact.location": { EN: "Cabo, Mexico", ES: "Cabo, M\u00e9xico" },
+
+  // Villas Collection Page
+  "villasPage.label": { EN: "Our Collection", ES: "Nuestra Colecci\u00f3n" },
+  "villasPage.title": { EN: "Luxury Private Villas", ES: "Villas Privadas de Lujo" },
+  "villasPage.subtitle": { EN: "From intimate beachfront retreats to expansive mountaintop estates, each villa in our collection offers an unparalleled luxury experience in Los Cabos.", ES: "Desde \u00edntimos retiros frente al mar hasta amplias fincas en la monta\u00f1a, cada villa de nuestra colecci\u00f3n ofrece una experiencia de lujo sin igual en Los Cabos." },
+  "villasPage.ctaLabel": { EN: "Your Dream Getaway Awaits", ES: "Tu Escapada de Sue\u00f1o te Espera" },
+  "villasPage.ctaHeading": { EN: "Ready to Experience\u00a0Cabo in Style?", ES: "\u00bfListo para Experimentar\u00a0Cabo con Estilo?" },
+  "villasPage.ctaDesc": { EN: "Let our concierge team curate the perfect villa and luxury experience for your next escape to Los Cabos.", ES: "Deja que nuestro equipo de consejer\u00eda cuide cada detalle para tu pr\u00f3xima escapada a Los Cabos." },
+  "villasPage.bookNow": { EN: "Book Now", ES: "Reservar Ahora" },
+
+  // Experiences Collection Page
+  "expPage.label": { EN: "Our Experiences", ES: "Nuestras Experiencias" },
+  "expPage.title": { EN: "Curated Luxury Moments", ES: "Momentos de Lujo Curados" },
+  "expPage.subtitle": { EN: "Every detail crafted, every moment elevated. Discover the finest experiences Los Cabos has to offer.", ES: "Cada detalle elaborado, cada momento elevado. Descubre las mejores experiencias que Los Cabos tiene para ofrecer." },
+  "expPage.ctaLabel": { EN: "Let Us Handle Everything", ES: "D\u00e9janos Manejar Todo" },
+  "expPage.ctaHeading": { EN: "Your Perfect Cabo\u00a0Experience Awaits", ES: "Tu Experiencia Perfecta\u00a0en Cabo te Espera" },
+  "expPage.ctaDesc": { EN: "Our concierge team will curate a bespoke itinerary tailored to your group \u2014 from arrival to departure.", ES: "Nuestro equipo de consejer\u00eda crear\u00e1 un itinerario personalizado para tu grupo, desde la llegada hasta la salida." },
+  "expPage.getInTouch": { EN: "Get in Touch", ES: "Cont\u00e1ctanos" },
+
+  // Experience Detail Page
+  "expDetail.expLabel": { EN: "Experience", ES: "Experiencia" },
+  "expDetail.includes": { EN: "Includes", ES: "Incluye" },
+  "expDetail.readyToBook": { EN: "Ready to Book?", ES: "\u00bfListo para Reservar?" },
+  "expDetail.inquireAbout": { EN: "Inquire About This Experience", ES: "Consultar Sobre Esta Experiencia" },
+  "expDetail.contactTeam": { EN: "Contact our concierge team to customize this experience for your group and get a personalized quote.", ES: "Contacta a nuestro equipo de consejer\u00eda para personalizar esta experiencia para tu grupo y obtener una cotizaci\u00f3n." },
+  "expDetail.getInTouch": { EN: "Get in Touch", ES: "Cont\u00e1ctanos" },
+  "expDetail.moreExp": { EN: "More Experiences", ES: "M\u00e1s Experiencias" },
+  "expDetail.exploreOther": { EN: "Explore Other Offerings", ES: "Explorar Otras Ofertas" },
+  "expDetail.viewAll": { EN: "View All Experiences", ES: "Ver Todas las Experiencias" },
+
+  // About Page
+  "about.label": { EN: "About Us", ES: "Sobre Nosotros" },
+  "about.intro1": { EN: "At Opulence Cabo, we specialize in curating the finest luxury experiences Los Cabos has to offer \u2014 from private villas and aviation to world-class yachting, dining, and entertainment.", ES: "En Opulence Cabo, nos especializamos en curar las mejores experiencias de lujo que Los Cabos tiene para ofrecer: desde villas privadas y aviaci\u00f3n hasta yates de clase mundial, gastronom\u00eda y entretenimiento." },
+  "about.intro2": { EN: "What began as a passion for connecting discerning travelers with the best of Cabo has evolved into a full-service luxury concierge \u2014 delivering personalized, seamless experiences for high-net-worth clients from across the United States and beyond.", ES: "Lo que comenz\u00f3 como una pasi\u00f3n por conectar a viajeros exigentes con lo mejor de Cabo ha evolucionado hasta convertirse en un servicio de consejer\u00eda de lujo completo, brindando experiencias personalizadas para clientes de alto patrimonio de todo Estados Unidos y m\u00e1s all\u00e1." },
+  "about.whoWeServe": { EN: "Who We Serve", ES: "A Qui\u00e9nes Servimos" },
+  "about.whoDesc1": { EN: "Our services cater to a high-end clientele \u2014 business owners, entrepreneurs, and affluent families seeking an uncompromising luxury experience in one of the world\u2019s most stunning destinations.", ES: "Nuestros servicios est\u00e1n dirigidos a una clientela de alto nivel: propietarios de empresas, emprendedores y familias adineradas que buscan una experiencia de lujo sin compromisos en uno de los destinos m\u00e1s impresionantes del mundo." },
+  "about.whoDesc2": { EN: "Los Cabos has become the center of luxury vacations in North America. Often compared to Monte Carlo, it began as a small fishing village and now offers world-renowned golf courses designed by Jack Nicklaus and Tiger Woods, some of the best fine dining in the world, and an unmatched ocean landscape.", ES: "Los Cabos se ha convertido en el centro de las vacaciones de lujo en Norteam\u00e9rica. A menudo comparado con Monte Carlo, comenz\u00f3 como un peque\u00f1o pueblo pesquero y ahora ofrece campos de golf de renombre mundial dise\u00f1ados por Jack Nicklaus y Tiger Woods, algunos de los mejores restaurantes del mundo y un paisaje marino incomparable." },
+  "about.vision": { EN: "Our Vision", ES: "Nuestra Visi\u00f3n" },
+  "about.visionDesc": { EN: "To provide unparalleled attention to detail and redefine what luxury travel means in Los Cabos. We aim to grow within the private aviation sector, with plans to expand our reach to the European continent \u2014 connecting the world\u2019s most discerning travelers with Cabo San Lucas through seamless private flight services.", ES: "Brindar una atenci\u00f3n al detalle sin igual y redefinir lo que significa el turismo de lujo en Los Cabos. Aspiramos a crecer en el sector de la aviaci\u00f3n privada, con planes de expandir nuestro alcance al continente europeo, conectando a los viajeros m\u00e1s exigentes del mundo con Cabo San Lucas a trav\u00e9s de servicios de vuelo privado impecables." },
+  "about.mission": { EN: "Our Mission", ES: "Nuestra Misi\u00f3n" },
+  "about.missionDesc": { EN: "To ensure the highest level of service and communication, meeting and exceeding the expectations of our clients at every touchpoint. We are building an exclusive community experience \u2014 one defined by outstanding benefits, personal relationships, and a commitment to making every moment extraordinary.", ES: "Garantizar el m\u00e1s alto nivel de servicio y comunicaci\u00f3n, cumpliendo y superando las expectativas de nuestros clientes en cada punto de contacto. Estamos construyendo una experiencia comunitaria exclusiva, definida por beneficios sobresalientes, relaciones personales y un compromiso de hacer cada momento extraordinario." },
+  "about.whatWeOffer": { EN: "What We Offer", ES: "Lo Que Ofrecemos" },
+  "about.fullSpectrum": { EN: "A Full Spectrum of\u00a0Luxury Services", ES: "Un Espectro Completo de\u00a0Servicios de Lujo" },
+  "about.ctaLabel": { EN: "Get in Touch", ES: "Cont\u00e1ctenos" },
+  "about.ctaHeading": { EN: "Ready to Experience\u00a0Opulence?", ES: "\u00bfListo para Experimentar\u00a0la Opulencia?" },
+  "about.ctaDesc": { EN: "Whether you\u2019re planning a private getaway, a corporate retreat, or an unforgettable celebration \u2014 our team is here to make it happen.", ES: "Ya sea que est\u00e9s planeando una escapada privada, un retiro corporativo o una celebraci\u00f3n inolvidable, nuestro equipo est\u00e1 aqu\u00ed para hacerlo realidad." },
+  "about.contactUs": { EN: "Contact Us", ES: "Cont\u00e1ctanos" },
+
+  // Villa Detail Page
+  "villa.viewGallery": { EN: "View Gallery", ES: "Ver Galer\u00eda" },
+  "villa.home": { EN: "Home", ES: "Inicio" },
+  "villa.breadcrumbVillas": { EN: "Villas", ES: "Villas" },
+  "villa.bedrooms": { EN: "Bedrooms", ES: "Habitaciones" },
+  "villa.bathrooms": { EN: "Bathrooms", ES: "Ba\u00f1os" },
+  "villa.guestsLabel": { EN: "Guests", ES: "Hu\u00e9spedes" },
+  "villa.propertyInfo": { EN: "Property Info", ES: "Informaci\u00f3n de la Propiedad" },
+  "villa.amenities": { EN: "Amenities", ES: "Comodidades" },
+  "villa.features": { EN: "Features & Services", ES: "Caracter\u00edsticas y Servicios" },
+  "villa.bookNow": { EN: "Book Now", ES: "Reservar Ahora" },
+  "villa.orCall": { EN: "Or call", ES: "O llame al" },
+  "villa.moreProperties": { EN: "More Properties", ES: "M\u00e1s Propiedades" },
+  "villa.exploreOther": { EN: "Explore Other Villas", ES: "Explorar Otras Villas" },
+  "villa.viewAll": { EN: "View All Villas", ES: "Ver Todas las Villas" },
+  "villa.beds": { EN: "beds", ES: "camas" },
+
   // Footer
   "footer.tagline": {
     EN: "Where luxury meets exclusivity in the heart of Los Cabos, Mexico.",
@@ -125,7 +202,19 @@ const LangContext = createContext<LangContextType>({
 });
 
 export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>("EN");
+  // Read localStorage synchronously on first client render to avoid flash
+  const [lang, setLangState] = useState<Lang>(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("opulence-lang") as Lang | null;
+      if (stored === "EN" || stored === "ES") return stored;
+    }
+    return "EN";
+  });
+
+  const setLang = (newLang: Lang) => {
+    setLangState(newLang);
+    localStorage.setItem("opulence-lang", newLang);
+  };
 
   const t = (key: string): string => {
     return translations[key]?.[lang] ?? key;

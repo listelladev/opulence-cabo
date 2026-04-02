@@ -34,7 +34,7 @@ export default function ReservationBar() {
               +1 (760) 485-2386
             </a>
             <a
-              href="mailto:opulencecabo@gmail.com?subject=Villa%20Reservation%20Inquiry"
+              href="/contact"
               className="inline-flex items-center justify-center px-8 py-3 bg-gold text-dark text-sm tracking-[0.15em] uppercase font-normal hover:bg-gold-light transition-colors duration-300 w-full sm:w-auto"
             >
               {t("reservation.book")}

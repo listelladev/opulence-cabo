@@ -4,14 +4,16 @@ import { experiences } from "@/data/experiences";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import { useLang } from "@/components/LangContext";
 
 export default function ExperiencesCollection() {
+  const { t } = useLang();
   return (
     <>
       <SmoothScroll />
       <Navbar />
 
-      <main className="bg-dark min-h-screen">
+      <main className="bg-dark min-h-screen page-transition">
         {/* Hero Section */}
         <div className="relative h-[70vh] md:h-[80vh] overflow-hidden">
           <div
@@ -21,14 +23,13 @@ export default function ExperiencesCollection() {
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 md:px-10 text-center">
             <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-4">
-              Our Experiences
+              {t("expPage.label")}
             </h2>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight mb-4">
-              Curated Luxury Moments
+              {t("expPage.title")}
             </h1>
             <p className="text-base md:text-lg text-white/60 font-light max-w-2xl leading-relaxed">
-              Every detail crafted, every moment elevated. Discover the finest
-              experiences Los Cabos has to offer.
+              {t("expPage.subtitle")}
             </p>
           </div>
         </div>
@@ -39,7 +40,7 @@ export default function ExperiencesCollection() {
             {experiences.map((exp) => (
               <a
                 key={exp.slug}
-                href={`/experiences/${exp.slug}`}
+                href={exp.link || `/experiences/${exp.slug}`}
                 className="group block"
               >
                 <div className="relative overflow-hidden mb-4 aspect-[16/10]">
@@ -71,20 +72,19 @@ export default function ExperiencesCollection() {
           <div className="absolute inset-0 bg-black/70" />
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
             <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-4">
-              Let Us Handle Everything
+              {t("expPage.ctaLabel")}
             </h2>
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-extralight leading-tight mb-6 max-w-3xl">
-              Your Perfect Cabo<br />Experience Awaits
+              {t("expPage.ctaHeading")}
             </h3>
             <p className="text-base text-white/50 font-light max-w-xl mb-10 leading-relaxed">
-              Our concierge team will curate a bespoke itinerary tailored to
-              your group — from arrival to departure.
+              {t("expPage.ctaDesc")}
             </p>
             <a
-              href="#contact"
+              href="/contact"
               className="inline-block px-10 py-4 bg-gold text-dark text-sm tracking-[0.15em] uppercase font-semibold hover:bg-gold-light transition-colors duration-300"
             >
-              Get in Touch
+              {t("expPage.getInTouch")}
             </a>
           </div>
         </section>

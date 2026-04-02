@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import { useLang } from "@/components/LangContext";
 
 function ParallaxImage({
   src,
@@ -54,36 +55,35 @@ function ParallaxImage({
 const featuredService = {
   label: "Private Villas",
   href: "/villas",
-  image: "/images/villas/villa-vegas-dave-2.webp",
+  image: "/images/villas/villa-vegas-dave-2/main-image.webp",
 };
 
 const services = [
-  { label: "Yachting", image: "/images/yachting.jpg", href: "/experiences" },
-  { label: "Fine Dining", image: "/images/fine-dining.jpg", href: "/experiences" },
-  { label: "Private Aviation", image: "/images/private-aviation.jpeg", href: "/experiences" },
-  { label: "Entertainment", image: "/images/entertainment.jpg", href: "/experiences" },
-  { label: "Full-Service Groups", image: "/images/full-service-group.jpg", href: "/experiences" },
-  { label: "Golf", image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=600&q=80", href: "/experiences" },
-  { label: "Helicopter Tours", image: "/images/helicopter-tours.jpg", href: "/experiences" },
+  { label: "Yachting", image: "/images/yachting.jpg", href: "/experiences/yachting" },
+  { label: "Fine Dining", image: "/images/fine-dining.jpg", href: "/experiences/fine-dining" },
+  { label: "Private Aviation", image: "/images/private-aviation.jpeg", href: "/experiences/private-aviation" },
+  { label: "Entertainment", image: "/images/entertainment.jpg", href: "/experiences/entertainment" },
+  { label: "Full-Service Groups", image: "/images/full-service-group.jpg", href: "/experiences/full-service-groups" },
 ];
 
 export default function AboutPage() {
+  const { t } = useLang();
   return (
     <>
       <SmoothScroll />
       <Navbar />
 
-      <main className="bg-dark min-h-screen">
+      <main className="bg-dark min-h-screen page-transition">
         {/* Hero */}
         <div className="relative h-[70vh] md:h-[80vh] overflow-hidden">
           <div
             className="absolute inset-0 bg-fixed bg-cover bg-center"
-            style={{ backgroundImage: "url(/images/experiences-collection-hero.jpg)" }}
+            style={{ backgroundImage: "url(/images/Vegas-Dave-3_DSC1694-1-scaled.jpg)" }}
           />
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 md:px-10 text-center">
             <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-4">
-              About Us
+              {t("about.label")}
             </h2>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight">
               Opulence Cabo
@@ -95,15 +95,10 @@ export default function AboutPage() {
         <section className="px-6 md:px-10 py-20 md:py-28">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed mb-8">
-              At Opulence Cabo, we specialize in curating the finest luxury
-              experiences Los Cabos has to offer — from private villas and
-              aviation to world-class yachting, dining, and entertainment.
+              {t("about.intro1")}
             </p>
             <p className="text-base md:text-lg text-white/50 font-light leading-relaxed">
-              What began as a passion for connecting discerning travelers with
-              the best of Cabo has evolved into a full-service luxury
-              concierge — delivering personalized, seamless experiences for
-              high-net-worth clients from across the United States and beyond.
+              {t("about.intro2")}
             </p>
           </div>
         </section>
@@ -114,27 +109,20 @@ export default function AboutPage() {
             <div className="lg:grid lg:grid-cols-[1fr_1fr] lg:gap-20 items-center">
               <div className="mb-12 lg:mb-0">
                 <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-6">
-                  Who We Serve
+                  {t("about.whoWeServe")}
                 </h2>
                 <p className="text-base md:text-lg text-white/70 font-light leading-relaxed mb-6">
-                  Our services cater to a high-end clientele — business owners,
-                  entrepreneurs, and affluent families seeking an uncompromising
-                  luxury experience in one of the world&apos;s most stunning
-                  destinations.
+                  {t("about.whoDesc1")}
                 </p>
                 <p className="text-base md:text-lg text-white/50 font-light leading-relaxed">
-                  Los Cabos has become the center of luxury vacations in North
-                  America. Often compared to Monte Carlo, it began as a small
-                  fishing village and now offers world-renowned golf courses
-                  designed by Jack Nicklaus and Tiger Woods, some of the best fine
-                  dining in the world, and an unmatched ocean landscape.
+                  {t("about.whoDesc2")}
                 </p>
               </div>
 
               <ParallaxImage
-                src="/images/villas/villa-vegas-dave-3.webp"
+                src="/images/villas/villa-vegas-dave-3/main-image.webp"
                 alt="Luxury beachfront villa in Los Cabos"
-                className="relative aspect-[4/5]"
+                className="relative aspect-[4/3]"
               />
             </div>
           </div>
@@ -145,30 +133,32 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
             {/* Vision */}
             <div>
-              <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-6">
-                Our Vision
-              </h2>
+              <div className="mb-6">
+                <svg className="w-10 h-10 text-gold mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold">
+                  {t("about.vision")}
+                </h2>
+              </div>
               <p className="text-base md:text-lg text-white/70 font-light leading-relaxed">
-                To provide unparalleled attention to detail and redefine what
-                luxury travel means in Los Cabos. We aim to grow within the
-                private aviation sector, with plans to expand our reach to the
-                European continent — connecting the world&apos;s most
-                discerning travelers with Cabo San Lucas through seamless
-                private flight services.
+                {t("about.visionDesc")}
               </p>
             </div>
 
             {/* Mission */}
             <div>
-              <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-6">
-                Our Mission
-              </h2>
+              <div className="mb-6">
+                <svg className="w-10 h-10 text-gold mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                </svg>
+                <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold">
+                  {t("about.mission")}
+                </h2>
+              </div>
               <p className="text-base md:text-lg text-white/70 font-light leading-relaxed">
-                To ensure the highest level of service and communication,
-                meeting and exceeding the expectations of our clients at every
-                touchpoint. We are building an exclusive community experience
-                — one defined by outstanding benefits, personal relationships,
-                and a commitment to making every moment extraordinary.
+                {t("about.missionDesc")}
               </p>
             </div>
           </div>
@@ -178,10 +168,10 @@ export default function AboutPage() {
         <section className="bg-dark-deep">
           <div className="px-6 md:px-10 py-20 md:py-28">
             <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-4">
-              What We Offer
+              {t("about.whatWeOffer")}
             </h2>
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-extralight leading-tight mb-14">
-              A Full Spectrum of<br />Luxury Services
+              {t("about.fullSpectrum")}
             </h3>
 
             <div className="lg:grid lg:grid-cols-[1fr_1fr] lg:gap-12 xl:gap-16 items-stretch">
@@ -206,15 +196,15 @@ export default function AboutPage() {
                 </div>
               </a>
 
-              {/* Right — service list with thumbnails, 2 columns, stretched to match */}
-              <div className="grid grid-cols-2 gap-x-6 md:gap-x-10 content-between">
+              {/* Right — service list with thumbnails */}
+              <div className="grid grid-cols-1 content-between">
                 {services.map((service) => (
                   <a
                     key={service.label}
                     href={service.href}
-                    className="group flex items-center gap-4 py-5 border-b border-white/10"
+                    className="group flex items-center gap-5 py-5 border-b border-white/10 last:border-b-0"
                   >
-                    <div className="relative w-16 h-12 flex-shrink-0 overflow-hidden">
+                    <div className="relative w-24 h-16 flex-shrink-0 overflow-hidden">
                       <img
                         src={service.image}
                         alt={service.label}
@@ -222,7 +212,7 @@ export default function AboutPage() {
                         loading="lazy"
                       />
                     </div>
-                    <span className="text-sm text-white/70 font-light group-hover:text-gold transition-colors duration-300">
+                    <span className="text-base text-white/70 font-light group-hover:text-gold transition-colors duration-300">
                       {service.label}
                     </span>
                   </a>
@@ -241,22 +231,20 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-black/70" />
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
             <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-4">
-              Get in Touch
+              {t("about.ctaLabel")}
             </h2>
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-extralight leading-tight mb-6 max-w-3xl">
-              Ready to Experience<br />Opulence?
+              {t("about.ctaHeading")}
             </h3>
             <p className="text-base text-white/50 font-light max-w-xl mb-10 leading-relaxed">
-              Whether you&apos;re planning a private getaway, a corporate
-              retreat, or an unforgettable celebration — our team is here to
-              make it happen.
+              {t("about.ctaDesc")}
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-block px-10 py-4 bg-gold text-dark text-sm tracking-[0.15em] uppercase font-semibold hover:bg-gold-light transition-colors duration-300"
               >
-                Contact Us
+                {t("about.contactUs")}
               </a>
               <a
                 href="tel:+17604852386"

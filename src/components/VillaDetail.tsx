@@ -4,7 +4,9 @@ import { Villa, getOtherVillas } from "@/data/villas";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import VillaGallery from "@/components/VillaGallery";
 import { useMemo } from "react";
+import { useLang } from "@/components/LangContext";
 
 /* ── Icon map for amenities ── */
 function AmenityIcon({ label }: { label: string }) {
@@ -189,6 +191,7 @@ function AmenityIcon({ label }: { label: string }) {
 }
 
 export default function VillaDetail({ villa }: { villa: Villa }) {
+  const { t } = useLang();
   const otherVillas = useMemo(() => getOtherVillas(villa.slug, 3), [villa.slug]);
 
   return (
@@ -196,7 +199,7 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
       <SmoothScroll />
       <Navbar />
 
-      <main className="bg-dark min-h-screen">
+      <main className="bg-dark min-h-screen page-transition">
         {/* Hero Image */}
         <div className="relative w-full aspect-[16/9] md:aspect-[21/9]">
           <img
@@ -204,6 +207,17 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
             alt={villa.name}
             className="w-full h-full object-cover"
           />
+          {villa.galleryImages.length > 0 && (
+            <button
+              onClick={() => document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" })}
+              className="absolute bottom-4 right-4 md:bottom-6 md:right-6 flex items-center gap-2 px-4 py-2.5 bg-dark/60 backdrop-blur-sm border border-white/20 text-white text-xs tracking-[0.15em] uppercase hover:bg-dark/80 transition-colors duration-300 cursor-pointer"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.41a2.25 2.25 0 013.182 0l2.909 2.91M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+              </svg>
+              {t("villa.viewGallery")}
+            </button>
+          )}
         </div>
 
         <div className="px-6 md:px-10 pt-12 md:pt-16 relative z-10">
@@ -211,11 +225,11 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
           <nav className="mb-6 md:mb-8">
             <ol className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-white/40">
               <li>
-                <a href="/" className="hover:text-white transition-colors">Home</a>
+                <a href="/" className="hover:text-white transition-colors">{t("villa.home")}</a>
               </li>
               <li>/</li>
               <li>
-                <a href="/villas" className="hover:text-white transition-colors">Villas</a>
+                <a href="/villas" className="hover:text-white transition-colors">{t("villa.breadcrumbVillas")}</a>
               </li>
               <li>/</li>
               <li className="text-white/70">{villa.name}</li>
@@ -244,15 +258,15 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
               <div className="grid grid-cols-3 gap-4 mb-12 md:mb-16 border-y border-white/10 py-6">
                 <div className="text-center">
                   <p className="text-2xl md:text-3xl font-extralight text-gold">{villa.bedrooms}</p>
-                  <p className="text-xs tracking-[0.15em] uppercase text-white/50 mt-1">Bedrooms</p>
+                  <p className="text-xs tracking-[0.15em] uppercase text-white/50 mt-1">{t("villa.bedrooms")}</p>
                 </div>
                 <div className="text-center border-x border-white/10">
                   <p className="text-2xl md:text-3xl font-extralight text-gold">{villa.bathrooms}</p>
-                  <p className="text-xs tracking-[0.15em] uppercase text-white/50 mt-1">Bathrooms</p>
+                  <p className="text-xs tracking-[0.15em] uppercase text-white/50 mt-1">{t("villa.bathrooms")}</p>
                 </div>
                 <div className="text-center">
                   <p className="text-2xl md:text-3xl font-extralight text-gold">{villa.guests}</p>
-                  <p className="text-xs tracking-[0.15em] uppercase text-white/50 mt-1">Guests</p>
+                  <p className="text-xs tracking-[0.15em] uppercase text-white/50 mt-1">{t("villa.guestsLabel")}</p>
                 </div>
               </div>
 
@@ -266,7 +280,7 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
               {/* Property Info */}
               <div className="mb-14 md:mb-20">
                 <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-8">
-                  Property Info
+                  {t("villa.propertyInfo")}
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-6">
                   {villa.propertyInfo.map((info) => (
@@ -283,7 +297,7 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
               {/* Amenities */}
               <div className="mb-14 md:mb-20">
                 <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-8">
-                  Amenities
+                  {t("villa.amenities")}
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
                   {villa.amenities.map((amenity) => (
@@ -303,7 +317,7 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
               {/* Features & Services */}
               <div className="mb-14 md:mb-20">
                 <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-8">
-                  Features & Services
+                  {t("villa.features")}
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
                   {villa.features.map((feature) => (
@@ -346,10 +360,10 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
                   </div>
 
                   <a
-                    href="#contact"
+                    href="/contact"
                     className="block w-full text-center py-4 bg-gold text-dark text-sm tracking-[0.15em] uppercase font-semibold hover:bg-gold-light transition-colors duration-300"
                   >
-                    Book Now
+                    {t("villa.bookNow")}
                   </a>
 
                   <div className="mt-6 text-center">
@@ -357,7 +371,7 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
                       href="tel:+17604852386"
                       className="text-xs tracking-[0.1em] text-white/40 hover:text-white transition-colors"
                     >
-                      Or call +1 (760) 485-2386
+                      {t("villa.orCall")} +1 (760) 485-2386
                     </a>
                   </div>
                 </div>
@@ -373,30 +387,37 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
                 <p className="text-xs text-white/40">{villa.location}</p>
               </div>
               <a
-                href="#contact"
+                href="/contact"
                 className="px-6 py-3 bg-gold text-dark text-xs tracking-[0.15em] uppercase font-semibold hover:bg-gold-light transition-colors"
               >
-                Book Now
+                {t("villa.bookNow")}
               </a>
             </div>
           </div>
 
+          {/* Photo Gallery */}
+          {villa.galleryImages.length > 0 && (
+            <div id="gallery" className="mt-14 md:mt-20 scroll-mt-24">
+              <VillaGallery images={villa.galleryImages} />
+            </div>
+          )}
+
           {/* More Properties */}
-          <section className="py-20 md:py-28 border-t border-white/10 mt-14 md:mt-20">
+          <section className="py-20 md:py-28 border-t border-white/10">
             <div className="flex items-end justify-between mb-12">
               <div>
                 <h2 className="text-sm tracking-[0.2em] uppercase text-gold font-semibold mb-4">
-                  More Properties
+                  {t("villa.moreProperties")}
                 </h2>
                 <h3 className="text-2xl md:text-3xl font-extralight">
-                  Explore Other Villas
+                  {t("villa.exploreOther")}
                 </h3>
               </div>
               <a
                 href="/villas"
                 className="link-underline text-sm tracking-[1.6px] uppercase text-white/60 hover:text-white transition-colors hidden md:block"
               >
-                View All Villas
+                {t("villa.viewAll")}
               </a>
             </div>
 
@@ -424,8 +445,8 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
                       <p className="text-sm text-white/50">{v.location}</p>
                     </div>
                     <div className="flex gap-4 text-xs text-white/40 mt-1">
-                      <span>{v.bedrooms} beds</span>
-                      <span>{v.guests} guests</span>
+                      <span>{v.bedrooms} {t("villa.beds")}</span>
+                      <span>{v.guests} {t("villa.guestsLabel").toLowerCase()}</span>
                     </div>
                   </div>
                 </a>
@@ -437,7 +458,7 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
                 href="/villas"
                 className="link-underline text-sm tracking-[1.6px] uppercase text-white/60 hover:text-white transition-colors"
               >
-                View All Villas
+                {t("villa.viewAll")}
               </a>
             </div>
           </section>

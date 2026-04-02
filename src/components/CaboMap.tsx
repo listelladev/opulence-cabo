@@ -7,32 +7,32 @@ const regions = [
   {
     name: "Pedregal",
     description: { EN: "The most exclusive gated community in Cabo San Lucas, known as the Beverly Hills of Los Cabos. Home to stunning clifftop villas with panoramic ocean views.", ES: "La comunidad cerrada m\u00e1s exclusiva de Cabo San Lucas, conocida como el Beverly Hills de Los Cabos. Hogar de impresionantes villas en acantilados con vistas panor\u00e1micas al oc\u00e9ano." },
-    x: "32%", y: "62%",
-  },
-  {
-    name: "Palmilla",
-    description: { EN: "A prestigious resort community along the coast, featuring beachfront estates and world-class golf. The gold standard of Los Cabos luxury.", ES: "Una prestigiosa comunidad tur\u00edstica a lo largo de la costa, con propiedades frente al mar y golf de clase mundial. El est\u00e1ndar de oro del lujo en Los Cabos." },
-    x: "68%", y: "35%",
+    x: "27%", y: "74%",
   },
   {
     name: "Cabo San Lucas Marina",
     description: { EN: "The vibrant heart of Cabo, where mega-yachts dock alongside fine dining, nightlife, and departure point for ocean adventures.", ES: "El vibrante coraz\u00f3n de Cabo, donde los mega-yates atracan junto a la alta cocina, la vida nocturna y punto de partida para aventuras oce\u00e1nicas." },
-    x: "25%", y: "75%",
+    x: "23%", y: "80%",
   },
   {
     name: "The Corridor",
     description: { EN: "The stunning coastal highway connecting Cabo San Lucas and San Jose del Cabo, lined with luxury resorts, championship golf courses, and hidden beaches.", ES: "La impresionante carretera costera que conecta Cabo San Lucas y San Jos\u00e9 del Cabo, bordeada de resorts de lujo, campos de golf y playas escondidas." },
-    x: "52%", y: "45%",
+    x: "38%", y: "62%",
+  },
+  {
+    name: "Palmilla",
+    description: { EN: "A prestigious resort community along the coast, featuring beachfront estates and world-class golf. The gold standard of Los Cabos luxury.", ES: "Una prestigiosa comunidad tur\u00edstica a lo largo de la costa, con propiedades frente al mar y golf de clase mundial. El est\u00e1ndar de oro del lujo en Los Cabos." },
+    x: "44%", y: "54%",
   },
   {
     name: "San Jose del Cabo",
     description: { EN: "The charming art district and cultural heart of Los Cabos, featuring galleries, farm-to-table dining, and a beautifully preserved town center.", ES: "El encantador distrito de arte y coraz\u00f3n cultural de Los Cabos, con galer\u00edas, gastronom\u00eda de granja a mesa y un centro hist\u00f3rico bellamente preservado." },
-    x: "78%", y: "28%",
+    x: "51%", y: "46%",
   },
   {
     name: "East Cape",
     description: { EN: "Cabo's emerging frontier of ultra-private estates and eco-luxury, offering untouched beaches and world-renowned sport fishing.", ES: "La frontera emergente de Cabo con propiedades ultra-privadas y eco-lujo, ofreciendo playas v\u00edrgenes y pesca deportiva de renombre mundial." },
-    x: "88%", y: "18%",
+    x: "58%", y: "36%",
   },
 ];
 

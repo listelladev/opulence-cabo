@@ -50,7 +50,7 @@ export default function Navbar() {
   const navLinks = [
     { label: t("nav.villas"), href: "/villas" },
     { label: t("nav.experiences"), href: "/experiences" },
-    { label: t("nav.contact"), href: "#contact" },
+    { label: t("nav.contact"), href: "/contact" },
     { label: t("nav.about"), href: "/about" },
   ];
 
@@ -110,7 +110,7 @@ export default function Navbar() {
 
             {/* Right side: Language Switcher */}
             <div className="flex items-center gap-6">
-              <div className="flex items-center gap-0 text-sm tracking-[1.6px] uppercase">
+              <div className="flex items-center gap-0 text-sm tracking-[1.6px] uppercase" suppressHydrationWarning>
                 <button
                   onClick={() => setLang("EN")}
                   className={`px-2 py-1 transition-colors duration-300 ${
