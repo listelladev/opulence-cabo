@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     const { data, error } = await resend.emails.send({
       from: "Opulence Cabo <notifications@opulencecabo.com>",
       to: ["design@listella.co"],
-      reply_to: email,
+      replyTo: email,
       subject: `New Inquiry from ${firstName} ${lastName}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; color: #222;">
