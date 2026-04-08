@@ -26,6 +26,7 @@ export default function ContactPage() {
     experience: "",
     message: "",
   });
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -33,9 +34,20 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // TODO: wire up form submission
+    setStatus("sending");
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+    if (res.ok) {
+      setStatus("sent");
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", experience: "", message: "" });
+    } else {
+      setStatus("error");
+    }
   }
 
   const inputClass =
@@ -205,10 +217,17 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="inline-block px-10 py-4 bg-gold text-dark text-sm tracking-[0.15em] uppercase font-semibold hover:bg-gold-light transition-colors duration-300"
+                    disabled={status === "sending" || status === "sent"}
+                    className="inline-block px-10 py-4 bg-gold text-dark text-sm tracking-[0.15em] uppercase font-semibold hover:bg-gold-light transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {t("contact.send")}
+                    {status === "sending" ? "Sending…" : status === "sent" ? "Message Sent" : t("contact.send")}
                   </button>
+
+                  {status === "error" && (
+                    <p className="text-sm text-red-400 mt-2">
+                      Something went wrong. Please try again or email us directly.
+                    </p>
+                  )}
                 </form>
               </div>
             </div>
