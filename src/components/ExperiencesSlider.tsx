@@ -11,31 +11,31 @@ export default function ExperiencesSlider() {
     {
       title: t("exp.yachting"),
       description: t("exp.yachting.desc"),
-      image: "https://opulencecabo.com/wp-content/uploads/2024/05/12.png",
+      image: "/images/experiences/yachting/main-image.jpg",
       href: "/experiences/yachting",
     },
     {
       title: t("exp.dining"),
       description: t("exp.dining.desc"),
-      image: "https://opulencecabo.com/wp-content/uploads/2024/05/90.png",
+      image: "/images/experiences/fine-dining/main-image.png",
       href: "/experiences/fine-dining",
     },
     {
       title: t("exp.aviation"),
       description: t("exp.aviation.desc"),
-      image: "https://opulencecabo.com/wp-content/uploads/2024/05/DSC02297-scaled.jpeg",
+      image: "/images/experiences/private-aviation/main-image.jpeg",
       href: "/experiences/private-aviation",
     },
     {
       title: t("exp.entertainment"),
       description: t("exp.entertainment.desc"),
-      image: "https://opulencecabo.com/wp-content/uploads/2024/05/123-1.png",
+      image: "/images/experiences/entertainment/main-image.png",
       href: "/experiences/entertainment",
     },
     {
       title: t("exp.groups"),
       description: t("exp.groups.desc"),
-      image: "https://opulencecabo.com/wp-content/uploads/2024/10/dinner.png",
+      image: "/images/experiences/full-service-group/main-image.jpg",
       href: "/experiences/group-packages",
     },
   ];
