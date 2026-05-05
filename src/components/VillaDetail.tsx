@@ -271,10 +271,17 @@ export default function VillaDetail({ villa }: { villa: Villa }) {
               </div>
 
               {/* Description */}
-              <div className="mb-14 md:mb-20">
-                <p className="text-base md:text-lg text-white/70 leading-relaxed font-light">
-                  {lang === "ES" && villa.descriptionES ? villa.descriptionES : villa.description}
-                </p>
+              <div className="mb-14 md:mb-20 space-y-5">
+                {(lang === "ES" && villa.descriptionES ? villa.descriptionES : villa.description)
+                  .split("\n\n")
+                  .map((paragraph, i) => (
+                    <p
+                      key={i}
+                      className="text-base md:text-lg text-white/70 leading-relaxed font-light"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
               </div>
 
               {/* Suites & Bedrooms */}
