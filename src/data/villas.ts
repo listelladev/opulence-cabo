@@ -1325,7 +1325,7 @@ export const villas: Villa[] = [
     location: "El Pedregal, Los Cabos",
     bedrooms: 4,
     bathrooms: "5.5",
-    guests: 10,
+    guests: 11,
     image: "/images/villas/casa-cyan/main-image.jpeg",
     galleryImages: [
       "/images/villas/casa-cyan/11c75d67-eb7a-4fe7-94b8-8fbc7e6eb1b3.jpeg",
@@ -1361,7 +1361,7 @@ export const villas: Villa[] = [
     propertyInfo: [
       { label: "Bedrooms", value: "4 Suites" },
       { label: "Bathrooms", value: "5.5 Bathrooms" },
-      { label: "Guests", value: "Up to 10" },
+      { label: "Guests", value: "Up to 11" },
       { label: "Location", value: "El Pedregal Gated Community" },
       { label: "Views", value: "Pacific Ocean" },
       { label: "Security", value: "24/7 Gated Access" },
@@ -1369,7 +1369,7 @@ export const villas: Villa[] = [
     propertyInfoES: [
       { label: "Habitaciones", value: "4 Suites" },
       { label: "Baños", value: "5.5 Baños" },
-      { label: "Huéspedes", value: "Hasta 10" },
+      { label: "Huéspedes", value: "Hasta 11" },
       { label: "Ubicación", value: "Comunidad Cerrada El Pedregal" },
       { label: "Vistas", value: "Océano Pacífico" },
       { label: "Seguridad", value: "Acceso Controlado 24/7" },
