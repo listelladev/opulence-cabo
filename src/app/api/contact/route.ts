@@ -10,7 +10,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: "Opulence Cabo <notifications@opulencecabo.com>",
-      to: ["design@listella.co"],
+      to: ["hello@listella.co", "opulencecabo@gmail.com"],
       replyTo: email,
       subject: `New Inquiry from ${firstName} ${lastName}`,
       html: `
