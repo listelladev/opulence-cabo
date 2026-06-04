@@ -1332,8 +1332,9 @@ export const villas: Villa[] = [
     bedrooms: 4,
     bathrooms: "5.5",
     guests: 12,
-    image: "/images/villas/villa-8/main-image.jpg",
+    image: "/images/villas/villa-8/main-image-new.jpg",
     galleryImages: [
+      "/images/villas/villa-8/main-image.jpg",
       "/images/villas/villa-8/DJI_20260515064423_0048_D (1).jpg",
       "/images/villas/villa-8/DJI_20260515064423_0048_D.jpg",
       "/images/villas/villa-8/DJI_20260515064457_0050_D.jpg",
